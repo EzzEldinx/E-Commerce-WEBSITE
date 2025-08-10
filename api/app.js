@@ -20,11 +20,14 @@ const user = require('./routes/userRoute');
 const product = require('./routes/productRoute');
 const order = require('./routes/orderRoute');
 const payment = require('./routes/paymentRoute');
+const productsFileRoutes = require('./routes/productsFileRoute');
 
 app.use('/api/v1', user);
 app.use('/api/v1', product);
 app.use('/api/v1', order);
 app.use('/api/v1', payment);
+// Simple file-based products API for the task
+app.use('/', productsFileRoutes);
 
 // deployment
 __dirname = path.resolve();
